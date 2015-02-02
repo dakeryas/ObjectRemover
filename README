@@ -1,0 +1,4 @@
+# ObjectRemover
+
+The ObjectRemover aims at removing from a ROOT file a TKey whose name must be passed to the executable as the second argument, right after the filename. Optionally, a third argument may be passed to the executable to change the default extension with which the new stripped file will be saved (the default is "_stripped", "" overwrites the original file).
+
