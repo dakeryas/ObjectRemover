@@ -16,7 +16,7 @@ void Stripper::strip(){
   TIter keyIterator= fileToStrip->GetListOfKeys()->begin(); //iterator over the contents of the fileToStrip
   while(keyIterator != fileToStrip->GetListOfKeys()->end()){ //returns the pointer and increment it, when the pointer is not allocated it returns zero so the loop ends
     
-    if(std::string((*keyIterator)->GetName()).find(objectNameToRemove) != std::string::npos) strippedObjects[(*keyIterator)->GetName()] = dynamic_cast<TKey*>(*keyIterator)->ReadObj();//this is silly to cast a TObject to a TKey to eventually return a TObject with the ReadObj method, but heh, this is ROOT !
+    if(std::string((*keyIterator)->GetName()).find(objectNameToRemove) == std::string::npos) strippedObjects[(*keyIterator)->GetName()] = dynamic_cast<TKey*>(*keyIterator)->ReadObj();//this is silly to cast a TObject to a TKey to eventually return a TObject with the ReadObj method, but heh, this is ROOT !
     ++keyIterator;
 
   }
