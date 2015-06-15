@@ -9,25 +9,23 @@
 #include <TKey.h>
 #include <TIterator.h>
 
-using namespace std;
-
 class Stripper{
 
   const TFile* fileToStrip;
-  map<const char*, TObject*> strippedObjects;
-  string objectNameToRemove;
+  std::map<const char*, TObject*> strippedObjects;
+  std::string objectNameToRemove;
   
 public:  
-  Stripper(const TFile& fileToStrip, string objectNameToRemove);
+  Stripper(const TFile& fileToStrip, const std::string& objectNameToRemove);
   void strip();//actually stip down the vector of objects 
-  void save(const string& newFileName);//save the file to another name
+  void save(const std::string& newFileName);//save the file to another name
   void setFileToStrip(const TFile& fileToStrip);
-  void setObjectNameToRemove(const string& objectNameToRemove);
+  void setObjectNameToRemove(const std::string& objectNameToRemove);
   const char* getFileNameToStrip() const;
-  const string& getObjectNameToRemove() const;
+  const std::string& getObjectNameToRemove() const;
   
 };
 
-ostream& operator<<(ostream& output, const Stripper& stripper);
+std::ostream& operator<<(std::ostream& output, const Stripper& stripper);
 
 #endif
