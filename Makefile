@@ -12,7 +12,7 @@ OPTFLAG = $(FLAGS) -Wall -Wextra -O3
 
 LIBS :=  $(shell root-config --libs)
 LIBS += -lrt
-LIBS += -L$(BOOST_PATH)/build/lib -lboost_filesystem -lboost_system
+LIBS += -L$(BOOST_PATH)/lib -lboost_filesystem -lboost_system
 
 OBJS = $(patsubst %.cpp,%.o,$(addprefix $(ODIR)/,$(wildcard *.cpp)))
 OBJS += $(patsubst $(SDIR)/%.cpp,$(ODIR)/%.o,$(wildcard $(SDIR)/*.cpp))
