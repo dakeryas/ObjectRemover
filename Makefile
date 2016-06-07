@@ -8,7 +8,7 @@ MAKEFLAGS = -j$(shell nproc)
 FLAGS := $(shell root-config --cflags)
 FLAGS += -I. -I$(IDIR)
 FLAGS += -I$(BOOST_PATH)/include
-OPTFLAG = $(FLAGS) -Wall -Wextra -O3
+OPTFLAG = $(FLAGS) -Wall -Wextra -O3 -MMD -MP
 
 LIBS :=  $(shell root-config --libs)
 LIBS += -lrt
